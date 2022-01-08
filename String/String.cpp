@@ -1,14 +1,7 @@
 ﻿// String.cpp : Создать свой собственный супер-удобный класс String,
 //который позволит работать со строками именно так, как вы до сих пор об этом только мечтали!
 
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <string>
-#include <stdlib.h>
-#include <stdio.h>
-#include <algorithm>
-#include <ctime>
-using namespace std;
+#include "MyLibrary.h"
 
 
 class String
@@ -365,30 +358,7 @@ public:
 
 		 res = line.compare(this->text);
 
-		 return res;
-
-		/* char* temp = new char[sizeof(line) + 1];	
-		 
-		 unsigned int length_temp = strlen(temp);
-		 if (length_temp > length)
-		 {
-			 return false;
-		 }		 
-		 
-		 for (int i = 0; i <= length - length_temp; i++)
-		 {
-			 for (int j = 0; j < length_temp; j++)
-			 {
-				 text[j] = temp[i + j];
-			 }
-			 if (strcmp(text, temp) == 0)
-			 {
-				 return true;
-			 }
-
-			 delete[]temp;
-		 }	
-		 return false;*/
+		 return res;	
 	 }
 
 	 bool EndsWith(const String line) const
@@ -467,8 +437,7 @@ public:
 	 {
 		 cout << "Enter the line\n";
 		 string line;
-		 getline(cin, line);		 
-		 //string text = this->text;
+		 getline(cin, line);			 
 		 return line.find_first_of(this->text);		 
 	 }
 
